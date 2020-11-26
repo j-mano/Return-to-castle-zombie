@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4950283933467029321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4950283933467029323}
+  - component: {fileID: 4950283933467029320}
+  m_Layer: 0
+  m_Name: audiomanager
+  m_TagString: AudioManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4950283933467029323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4950283933467029321}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3681424, y: -0.46747136, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4950283933467029320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4950283933467029321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2762cb7602f0cd7f5900ae5ef5affd0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: PlantDeath
+    clip: {fileID: 8300000, guid: ff8240148ee026c4babb53949381e1cd, type: 3}
+    volume: 0.192
+    pitch: 0.65
+    source: {fileID: 0}
+    loop: 0
+  - name: Zombiedeath
+    clip: {fileID: 8300000, guid: fc1882cb9cb0d474c95537bbdb4c48bd, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: GameLost
+    clip: {fileID: 8300000, guid: 02d5d510fec366e5db76215690a9f19a, type: 3}
+    volume: 1
+    pitch: 1.01
+    source: {fileID: 0}
+    loop: 1
+  - name: towerplacementaudio
+    clip: {fileID: 8300000, guid: 5cd921b91deac4f47b05c451951f7a53, type: 3}
+    volume: 1
+    pitch: 1.01
+    source: {fileID: 0}
+    loop: 0
+  - name: MainTheme
+    clip: {fileID: 8300000, guid: 1618c5a0412d3e5f39087d2fe66df270, type: 3}
+    volume: 0.278
+    pitch: 0.5
+    source: {fileID: 0}
+    loop: 1
+  - name: ZombieSpawn
+    clip: {fileID: 8300000, guid: 821b6440d8e269c40b5a0eb8a44a079d, type: 3}
+    volume: 0.407
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0

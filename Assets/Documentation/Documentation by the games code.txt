@@ -1,0 +1,69 @@
+
+
+Description of structure.
+- Towers and Enemies loaded in the scen is listed in towersinscen and Enemiesinscenes. use these list if these objects is needed. it exit public get metods in theses manager for these lists.
+
+- Prefabs of all towers is in loaded in loaded towers script in the gamemanager. Use this if specifik prefab is needed.
+
+- Audio shoud be loaded via the audiomanager to set right volum. The manager is its own gameobject
+
+- Scens is separate entetis and inormations betwene these transfered via playerpreferenses.
+
+- Moast of the games code is loaded in the gamemanager object
+
+- Gui is separate from the rest of the game
+
+
+objectmanagment with Towers and Enemies
+- Towers and Enemies loaded in the scen is listed in towersinscen and Enemiesinscenes and these function is scaning the entire scen for these object. Finding theme by tag. prettymuch nothing is needed to be added when intancing these objects.
+
+
+
+Savesystem
+- Savesystem works like an resume function for the sytstem. saves when exiting the gamescene and loads in it again the it starts again.
+
+- Game is set to use 100 towers and are gamemecanic based rather based on technical limitation.
+
+- Higscore and state of the current game is loaded in jason files in savefolder in the games folder
+
+
+
+Highscoresystem
+- Saves when games is ending
+
+- Saves in jason files
+
+- Storing 10 players and showing 4 players in the meny.
+
+- The latets player is saved in playerpreferenses.
+
+
+
+Settings
+- Settings of the game like audio volum dificulty and so on are store in systempreferenses. Presistense storage so the settings is keept.
+
+- Playerpref is loading in the systems documents folder. read moore on unitys webbsite to exact location for each system: https://docs.unity3d.com/ScriptReference/PlayerPrefs.html
+
+
+
+Scenmanagment
+- All scens are separte systems and can easely be replaced.
+
+- The maps are loaded as prefabs and are initated when gamescene is loaded. maps are loaded based on playerpref settings
+
+
+
+Gui
+- Mostly separated in it own object hudcanvas
+
+- Towerselectmeny where planned to have sevral instances to swap betwene to select bigg amount of towers. Better solution coud exist. Run out of time before this could propely explored.
+
+
+Hotkey
+- Handled by uicontrolls in hudcanvas.
+- Gui is not updated by when hotkeys is changed in uicontrolls
+- controlls meny is not updated by when hotkeys is changed in uicontrolls
+
+
+.net
+Majority of the game can be used on .net 2.0. the only usage of 4.0 is UsageScript that printing out cpu usage. Easely removed if .net 2.0 i needed for specifik platform.

@@ -1,0 +1,182 @@
+This document shows testresults from different performance test.
+Different api is tested in the unity enginge to test performance differences.
+
+The test itself is biuld up to run certend amount of enimes and towers and run the game to get and avarage fps with the fps counter i build into the game itself.
+
+Vulkan is supported by windows and Linux.
+Highpreformance computer (stationary computer) (windows 10 edu n, Ubuntu):
+    Cpu: AMD Ryzen7 2700X. 8 cores 16 tread Basespeed 4GHZ (overclocked by motherboard) Turbo 4.3ghz
+    Gpu: Nvidia gtx 1050 2gb
+    Ram: 16GB ddr4
+    Storage: Nvme ssd
+    Screen res: 1920 x 1200
+    Api: Tested with OpenGL 4.5
+
+Windows midrange laptop (windows 10 pro):
+    Cpu: Intel core i5 6200 2 cores 4 tread Basespeed 2.4 ghz Turbo 2.8 ghz
+    Gpu: intel hd 520 + Nvidia gtx 940 1gb game running only on gtx 940 but windows things is handled by intel gpu so the game has it own gpu.
+    Ram: 8GB ddr3
+    Storage: ssd
+    Screen res: 1920 x 1080
+    Api: Tested with OpenGL 4.5
+
+Macbook pro 2010 (Mac OSX 10.13):
+    Cpu: intel core 2 duo
+    Gpu: Nvidia 320m 256mb
+    Ram: 4GB ddr3
+    Storage: Lowend ssd
+    Screen res: 1200 x 800
+    Api: Tested with OpenGL 3.3
+
+Highpreformance computer, Early test of the program
+      Linux Highpreformance computer
+            Test 1, 4 towers and 10 enemies
+            FPS: 60 CPU: 2% GPU: 3% peak on 28%
+            Test 2, 4 towers and 100 enemies
+            FPS: 60 CPU: 3% GPU: 4% peak on 30%
+            Test 3, 10 towers and 100 enemies
+            FPS: 60 CPU: 4% GPU: 5% peak on 31%
+            Test 4, 10 towers and 1000 enemies
+            FPS: 40 - 45 CPU: 13% GPU: 27 avg peak 39% single tread max load detected.
+            Test 5, 50 towers and 100 enemies
+            FPS: 60 CPU: 8-10% GPU: 12 avg 20-25 peak 30%
+            Test 6, 50 towers and 1000 enemies
+            FPS: 17-20 CPU: 20% GPU: 30% single tread max load detected.
+
+      windows Highpreformance computer
+            Test 1, 4 towers and 10 enemies
+            FPS: 60 CPU: 13% GPU: 30%
+            Test 2, 4 towers and 100 enemies
+            FPS: 60 CPU: 14.5% GPU: 33%
+            Test 3, 10 towers and 100 enemies
+            FPS: 60 CPU: 15.5% GPU: 36.4%
+            Test 4, 10 towers and 1000 enemies
+            FPS: 40 CPU: 14% GPU: 32% singel tread max load
+            Test 5, 50 towers and 100 enemies
+            FPS: 60 CPU: 20% GPU: 37-38%
+            Test 6, 50 towers and 1000 enemies
+            FPS: 7 CPU: 10% GPU: 20% singel tread max load
+      Note: the cpu usage here is over all cpu cores. when looking at the load on the cpu in the windows performance manager couild i see all the load on a few cores instead of all 16 treads.
+
+Highpreformance computer, Last version of the game
+      Linux Highpreformance computer
+            Test 1, 4 towers and 10 enemies
+              FPS: 60 Cpu:1.65  Gpu: 4% avg peak 25%
+            Test 2, 4 towers and 100 enemies
+              FPS: 60 Cpu:2.8 Gpu: 4% avg peak 30%
+            Test 3, 10 towers and 100 enemies
+              FPS: 60 Cpu:2.8 Gpu: 5% avg peak 32%
+            Test 4, 10 towers and 1000 enemies
+              FPS: 60 Cpu:16% Gpu: 5% avg peak 38%
+            Test 5, 50 towers and 100 enemies
+              FPS: 60 Cpu:3.5% Gpu: 5% avg peak 28%
+            Test 6, 50 towers and 1000 enemies
+              FPS: 60 Cpu:16% Gpu: 35 avg
+            Test 7, 50 towers and 1000 enemies no v-sync
+              FPS: 110 Cpu:20% Gpu: 30 avg
+
+      windows Highpreformance computer
+            Test 1, 4 towers and 10 enemies
+              FPS: 60 CPU: 13% GPU: 28%
+            Test 2, 4 towers and 100 enemies
+		  FPS: 60 CPU: 15% GPU: 30%
+            Test 3, 10 towers and 100 enemies
+		  FPS: 60 CPU: 15% GPU: 31%
+            Test 4, 10 towers and 1000 enemies
+		  FPS: 60 CPU: 24% GPU: 40%
+            Test 5, 50 towers and 100 enemies
+		  FPS: 60 CPU: 16% GPU: 33%
+ 	      test 6, 50 towers and 1000 enemies
+		  FPS: 60 CPU: 25% GPU: 40%
+
+Windows midrange laptop, Early test of the program
+      Windows midrange laptop
+            Test 1, 4 towers and 10 enemies
+		  FPS: 60 CPU: 15% GPU: 32%
+            Test 2, 4 towers and 100 enemies
+		  FPS: 60 CPU: 20% GPU: 34%
+            Test 3, 10 towers and 100 enemies
+		  FPS: 60 CPU: 25% GPU: 33%
+            Test 4, 10 towers and 1000 enemies
+		  FPS: 16 CPU:45%	GPU: 20-30% singel tread max load
+	      Test 5, 50 towers and 100 enemies
+		  FPS: 20 when cold 13 when warm CPU: 45-50% GPU:20 20-30% singel tread max load
+            Test 6, 50 towers and 1000 enemies
+		  Fps: 0 cpu: 50% singel tread max load
+
+      Windows midrange laptop (when vulkan api is used)
+            Test 1, 4 towers and 10 enemies
+		  FPS:60 CPU: 17% GPU: 30%
+            Test 2, 4 towers and 100 enemies
+		  FPS:60 CPU: 23% GPU: 30%
+            Test 3, 10 towers and 100 enemies
+		  FPS:60fps CPU:27% GPU: 30%
+            Test 4, 10 towers and 1000 enemies
+		  FPS: 17fps when cold 12 when warm CPU:47% GPU: 32% singel tread max load
+            Test 5, 50 towers and 100 enemies
+		  FPS: 20 CPU:43% GPU: 30%
+	      Test 6, 50 towers and 1000 enemies
+		  FPS: 0-2 CPU:47% GPU: 20% singel tread max load
+
+Windows midrange laptop, Last version of the game
+      Windows midrange laptop
+            Test 1, 4 towers and 10 enemies
+              FPS: 60 Cpu: 14%  Gpu: 32%
+            Test 2, 4 towers and 100 enemies
+              FPS: 60 Cpu: 19-20%  Gpu: 32%
+            Test 3, 10 towers and 100 enemies
+              FPS: 60 Cpu: 20%  Gpu: 33%
+            Test 4, 10 towers and 1000 enemies
+              FPS: 23 Cpu: 45%  Gpu: 17%
+            Test 5, 50 towers and 100 enemies
+              FPS: 60 Cpu: 24%  Gpu: 38%
+	      Test 6, 50 towers and 1000 enemies
+              FPS: 23 Cpu: 46%  Gpu: 16-17%
+
+      Windows midrange laptop (when vulkan api is used)
+            Test 1, 4 towers and 10 enemies
+                  FPS: 60 Cpu: 15%  Gpu: 31%
+            Test 2, 4 towers and 100 enemies
+                  FPS: 60 Cpu: 20%  Gpu: 32%
+            Test 3, 10 towers and 100 enemies
+                  FPS: 60 Cpu: 21%  Gpu: 32%
+            Test 4, 10 towers and 1000 enemies
+                  FPS: 24 Cpu: 44%  Gpu: 12%
+            Test 5, 50 towers and 100 enemies
+                  FPS: 60 Cpu: 23%  Gpu: 32%
+	     Test 6, 50 towers and 1000 enemies
+                  FPS: 24 Cpu: 44%  Gpu: 12%
+
+Macbook 2010 (The lowpoint in this project), Early test of the program
+            Test 1, 4 towers and 10 enemies
+		  FPS: 60 cpu: 30%
+            Test 2, 4 towers and 100 enemies
+		  FPS: 60 cpu: 55%
+            Test 3, 10 towers and 100 enemies
+		  FPS: 60 cpu: 65 - 70% depending on temp of the computer.
+	      Test 4, 10 towers and 500 enemies
+		  FPS: 30 cpu: 100
+            Test 5, 10 towers and 1000 enemies
+		  FPS: 7 cpu: 100%
+            Test 6, 50 towers and 100 enemies
+		  FPS: 10 to 30 when warm, cpu: 100%
+	      Test 7, 50 towers and 1000 enemies
+		  FPS: 0 determend on the performance of test 6
+
+Macbook 2010 (The lowpoint in this project), Last version of the game
+            Test 1, 4 towers and 10 enemies
+              FPS: 60 Cpu: 23%
+            Test 2, 4 towers and 100 enemies
+              FPS: 60 Cpu: 44%
+            Test 3, 10 towers and 100 enemies
+              FPS: 60 Cpu: 56%
+            Test 4, 10 towers and 500 enemies
+              FPS: 35 Cpu: 100%
+            Test 5, 10 towers and 1000 enemies
+              FPS: 12 Cpu: 100%
+            Test 6, 50 towers and 100 enemies
+              FPS: 60 Cpu: 66%
+            Test 7, 50 towers and 500 enemies
+              FPS: 40 Cpu: 100%
+            Test 8, 50 towers and 1000 enemies
+              FPS: 9 Cpu: 100%

@@ -1,0 +1,11 @@
+Main developer: Joachim Johnson
+
+Graphics where implemented by Joachim Johnson with some graphics from Openmediavault and Unity assets store. referenser are in separate dokument.
+
+Made in the curse: Systemvetenskaplig utveklingsprojeckt
+
+Gamegenrea: Open tower defence
+
+License: cc-by 3.0
+
+I want to be referenced if anywon continue to develepe this game but otherwise feel free to use this as a templete to any othe project or game.

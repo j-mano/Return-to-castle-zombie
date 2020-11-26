@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - enemyTag
+  - Tower
+  - castle
+  - buttons
+  - economyprintout
+  - villagers
+  - healthSlider
+  - Background
+  - objects
+  - devinfopanel
+  - arrow
+  - spawnarrow
+  - popup
+  - Grid
+  - Water
+  - UI
+  - AudioManager
+  - healthbar
+  - GameHandler
+  - Pausmeny
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Objekts
+  - fiender
+  - test
+  - Background
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

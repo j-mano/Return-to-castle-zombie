@@ -1,0 +1,15 @@
+Future functions that are recomended by original developer:
+
+- Make a better way to use hotkey and guibuttons to select towers, and maybe to change the hotkeys in the settings
+
+- Add moore towers, enemies and maps.
+
+- Improve ai of monsters.
+
+- Languagefiles to make it possble to change language
+
+- Optimation and updating of graphics
+
+- Make a better pause meny including thats include audio.
+
+- Multiplayer, making an other player spawn plants

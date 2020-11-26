@@ -1,0 +1,39 @@
+Description of the game
+The game itself
+- This game is a open tower defence game thats goes on forever.
+
+- Game have a few different maps and a few levels on each map. end level is bosslevel and is given and when finsiht is restart to first level but with higher dificulty.
+
+- Targeting Mac osx, linux and windows platform.
+
+
+
+Systemspecifik things:
+
+- OpenGL core is used to make it act as simaly as possible at all platforms - https://docs.unity3d.com/Manual/OpenGLCoreDetails.html
+
+- Mac OsX Loading Metal api as secondary. Note: Apple do not support latest version of OpenGL if anywon wonder if their mac using openGL 4.1.
+
+
+
+system requiments:
+- Using monogame .net 4 on all systems
+
+- Lowest systemspecs is an macbook from 2010 with intel core 2 duo, nividia graphics offerd by apple at the time, ssd and 4gb systemram.
+
+- OS, Recomended: Windows 10, Ubuntu LTS 18,04 / 20,04+ , mac osx 10.13+. Minimum: Windows 7, Ubuntu LTS 16,04 , mac osx 10.12+.
+
+- Systemram when running recomonded oses: 4gb. (400mb free for game + os you running and other aplicatinos running in the background)
+
+- Slowest CPU confirmed running this game: Mobile version of Intel core 2 duo
+
+- Slowest gpu confirmed running this game: Nvidia 320m 256mb
+
+- Lowest recomended resolution: 1280 : 720 (The game let you run on lower but text become unreadeble)
+
+- Aspect ratios: 16:9 and 16:10 recomended, can run 4:3. Anything else is locked in the editors resolution selector.
+
+- OpenGL 3.3 support is the lowest supported api 4.5 is the latest if thats supported wich Nvidia does not.
+
+Misc
+- nothing here get.

@@ -21,11 +21,10 @@ public class Enemystorage : MonoBehaviour
 
     void Update()
     {
-        castle      = GameObject.FindGameObjectWithTag("castle");
-        GameHandler = GameObject.FindGameObjectWithTag("GameHandler");
-
-        // Keeps track on if its supposed to be dead or not.
         enemydead();
+
+        castle = GameObject.FindGameObjectWithTag("castle");
+        GameHandler = GameObject.FindGameObjectWithTag("GameHandler");
     }
 
     // Alot of metods to keep track of all stats of an enemy object.
@@ -102,20 +101,17 @@ public class Enemystorage : MonoBehaviour
     // Checks if enemy is alive or not and destroys itself if dead.
     void enemydead(){
         if(currenthealht <= 0){
-            ondeadthupdatestats();
-
-            // Remove enemies on death
-            GameHandler.GetComponent<enemiesInScene>().removeenemie();
-
             FindObjectOfType<audiomanager>().Play("PlantDeath");
-            
+
+            GameHandler.GetComponent<enemiesInScene>().removeenemie();
+            ondeadthupdatestats();
             destroyobject();
         }
     }
 
     // Destroy object and everything related to it.
     void destroyobject(){
-        Object.Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 
     // Updatdesstats as it shoud when the object dies.

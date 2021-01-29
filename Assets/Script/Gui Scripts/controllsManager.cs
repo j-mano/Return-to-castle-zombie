@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 public class controllsManager : MonoBehaviour
 {
@@ -18,10 +21,18 @@ public class controllsManager : MonoBehaviour
     }
 
     void controlsDef(){
-        standardControlls();
-        gameplayControlls();
-        hotKeys();
-        testMapKeys();
+        Task t1 = Task.Run( () => {
+            standardControlls();
+            gameplayControlls();
+        });
+
+        Task t2 = Task.Run( () => {
+            hotKeys();
+            testMapKeys();
+        });
+
+        t1.Wait();
+        t2.Wait();
     }
 
     void standardControlls(){

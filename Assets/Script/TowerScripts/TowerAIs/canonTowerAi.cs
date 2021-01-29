@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 public class canonTowerAi : MonoBehaviour
 {
@@ -48,6 +51,7 @@ public class canonTowerAi : MonoBehaviour
             // stops the tower to fire outside its allowd firerate
             if (timelastfired + firerate < Time.time){
                 firecanonball();
+
                 timelastfired = Time.time;
             }
         }
@@ -104,6 +108,11 @@ public class canonTowerAi : MonoBehaviour
         InvokeRepeating("canonBallPath", 0, 0.03f);
     }
 
+    void createcanonball()
+    {
+
+    }
+
     // Canonballpath / Moving the canonball to the target and deal damage if it hits. if the target is killd before it hits the target is it destroyd.
     void canonBallPath(){
         float step = 20f * Time.deltaTime;
@@ -113,16 +122,18 @@ public class canonTowerAi : MonoBehaviour
             Destroy(canonball);
         }
         else{
-            canonball.transform.position = Vector2.MoveTowards(canonball.transform.position, shotingtarget.transform.position ,step);
+            // Setting a fixt framerate for updating the postition of the canonball
+            canonball.transform.position = Vector2.MoveTowards(canonball.transform.position, shotingtarget.transform.position, step);
 
             float distancex = shotingtarget.transform.position.x - canonball.transform.position.x;
             float distanceY = shotingtarget.transform.position.y - canonball.transform.position.y;
 
-            if(distancex < 0.1 && distanceY < 0.1){
-                damagetarget(shotingtarget);
-                CancelInvoke ("canonBallPath");
-                Destroy(canonball);
-            }
+            if (distancex < 0.1 && distanceY < 0.1)
+                {
+                    damagetarget(shotingtarget);
+                    CancelInvoke("canonBallPath");
+                    Destroy(canonball);
+                }
         }
     }
 

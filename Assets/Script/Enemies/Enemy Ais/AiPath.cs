@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 public class AiPath : MonoBehaviour
 {
@@ -27,10 +30,11 @@ public class AiPath : MonoBehaviour
     void Update()
     {
         if(gameObject.GetComponent<Enemystorage>().getAiActiv()){
+            flippingSpriteInDir();
+
             towerisdestroyd();
 
             aiDirwaypoint();
-            flippingSpriteInDir();
         }
     }
 
@@ -245,7 +249,7 @@ public class AiPath : MonoBehaviour
                 timelastfirerd = Time.time;
             }
             
-            if(enemyAiModeSetter == 1){
+        if(enemyAiModeSetter == 1){
                 enemytodamage.GetComponent<getTowerInfo>().substracthelht(gameObject.GetComponent<Enemystorage>().getDamage());
                 timelastfirerd = Time.time;
             }

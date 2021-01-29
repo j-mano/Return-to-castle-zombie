@@ -27,7 +27,6 @@ public class audiomanager : MonoBehaviour
 
             Debug.Log("Error failed to load audio settings. Falling back to default volum. - Audiomanager");
         }
-
         foreach ( Sound s in sounds){
             s.source        = gameObject.AddComponent<AudioSource>();
             s.source.clip   = s.clip;
@@ -44,8 +43,8 @@ public class audiomanager : MonoBehaviour
                     s.source.volume = (s.volume * SFXLevel) * mastesoundlevel;
             }
             else if(audionoff == 0)
-                s.source.volume = 0;
-        }
+                    s.source.volume = 0;
+            }
 
         maintheme();
     }

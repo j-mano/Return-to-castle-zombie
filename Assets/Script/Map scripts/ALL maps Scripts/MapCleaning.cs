@@ -19,7 +19,7 @@ public class MapCleaning : MonoBehaviour
             int arrowsabove50 = arrowArray.Length - 50;
             if(arrowsabove50 > 0){
                 for(int i = 0; i <= arrowsabove50; i++){
-                    Destroy(arrowArray[i]);
+                        Destroy(arrowArray[i]);
                 }
             }
         }

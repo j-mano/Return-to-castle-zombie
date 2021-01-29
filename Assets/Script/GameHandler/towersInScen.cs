@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 public class towersInScen : MonoBehaviour
 {
@@ -17,7 +20,7 @@ public class towersInScen : MonoBehaviour
 
     public void findTowers(){
         towers = GameObject.FindGameObjectsWithTag("Tower");
-
+        
         foreach (GameObject towe in towers)
             Debug.Log(towe.name);
     }

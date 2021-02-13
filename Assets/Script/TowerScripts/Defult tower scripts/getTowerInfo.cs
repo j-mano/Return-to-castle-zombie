@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Threading;
+using System.Threading.Tasks;
 
 public class getTowerInfo : MonoBehaviour
 {
@@ -149,8 +151,8 @@ public class getTowerInfo : MonoBehaviour
             initatedCanvas    = (GameObject)Instantiate(preLoadedCanvas);
             initatedHealthbar = (GameObject)Instantiate(preLoadedHealhtbar);
 
-            initatedCanvas.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 2);
-            initatedHealthbar.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 2);
+            initatedCanvas.transform.position       = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 2);
+            initatedHealthbar.transform.position    = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 2);
 
             initatedCanvas.SetActive(false);
             initatedHealthbar.SetActive(false);

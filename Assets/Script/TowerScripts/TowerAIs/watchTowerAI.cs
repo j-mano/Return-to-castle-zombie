@@ -41,7 +41,6 @@ public class watchTowerAI : MonoBehaviour
     }
 
     void aiupdaate(){
-        
         updateTarget();
 
         if (gameTarget != null)
@@ -103,17 +102,13 @@ public class watchTowerAI : MonoBehaviour
     void toweranimation(){
         // Shows whats tower thats fire
         SpriteRenderer sr;
-
         sr = GetComponent<SpriteRenderer>();
-
         sr.material.SetColor("_Color", Color.red);
     }
 
     void Colorreset(){
         SpriteRenderer sr;
-
         sr = GetComponent<SpriteRenderer>();
-
         sr.material.SetColor("_Color", Color.white);
     }
 

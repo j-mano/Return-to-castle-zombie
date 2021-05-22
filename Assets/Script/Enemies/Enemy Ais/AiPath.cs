@@ -22,20 +22,23 @@ public class AiPath : MonoBehaviour
     GameObject[] Towers;
     public Sprite sprite;
 
-    void Start(){
+    async void Start(){
         InvokeRepeating("updatepath", 0f, 0.5f);
-        load();
+        await load();
     }
 
-    void Update()
+    async void Update()
     {
         if(gameObject.GetComponent<Enemystorage>().getAiActiv()){
-            flippingSpriteInDir();
-
+            await flippingSpriteInDir();
             towerisdestroyd();
-
             aiDirwaypoint();
         }
+    }
+
+    void OnDestroy()
+    {
+        Debug.Log(this.name + "Is Killed");
     }
 
     void aiDirwaypoint(){
@@ -74,7 +77,7 @@ public class AiPath : MonoBehaviour
         }
     }
 
-    void flippingSpriteInDir(){
+    async Task flippingSpriteInDir(){
         // Fliping the sprite to face the direction it moves
         if(rg != null){
             if(rg.velocity.x >= 0.01f)
@@ -84,7 +87,7 @@ public class AiPath : MonoBehaviour
         }
     }
 
-    void load(){
+    async Task load(){
         range   = gameObject.GetComponent<Enemystorage>().getRange();
 
         seeker  = GetComponent<Seeker>();

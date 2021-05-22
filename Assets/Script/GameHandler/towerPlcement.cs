@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using System.Threading;
+using System.Threading.Tasks;
 
 public class towerPlcement : MonoBehaviour
 {
@@ -203,7 +205,7 @@ public class towerPlcement : MonoBehaviour
     }
 
     // This function is setting the construction meny to aktiv.
-    bool anyaktivpopups(){
+    async Task<bool> anyaktivpopupsasync(){
         bool aktivpopupss           = false;
         GameObject[] popuparray     = GameObject.FindGameObjectsWithTag("popup");
 
@@ -266,8 +268,8 @@ public class towerPlcement : MonoBehaviour
     }
 
     // This function is setting the selected tower to the game and deaktivates a few funtions of the specifikt selected tower instance.
-    public void settargettower(GameObject tower, string namn){
-        if(anyaktivpopups() == false && tower != null){
+    public async void settargettower(GameObject tower, string namn){
+        if(await anyaktivpopupsasync() == false && tower != null){
             if(target == null){
                 target      = tower;
                 targetname  = namn;

@@ -12,30 +12,35 @@ public class towersInScen : MonoBehaviour
     int towemax; // supposed to be max 100
 
     GameObject[] towers;
-    void Start()
+
+    async Task Start()
     {
-        findTowers();
-        InvokeRepeating("arrayClean", 0, 0.3f);
+        await findTowers();
+        InvokeRepeating("SlowUpdate", 0, 0.3f);
     }
 
-    public void findTowers(){
+    public async Task findTowers(){
         towers = GameObject.FindGameObjectsWithTag("Tower");
-        
+
         foreach (GameObject towe in towers)
             Debug.Log(towe.name);
     }
 
+    void SlowUpdate(){
+        arrayClean();
+    }
+
     public void arrayClean(){
         List<GameObject> towerList = new List<GameObject>();
-
         foreach(GameObject tower in towers){
             if(tower != null){
                 towerList.Add(tower);
             }
         }
 
-        if(towerList!=null)
+        if(towerList!=null){
             towers = towerList.ToArray();
+        }
     }
 
     public GameObject[] getetowesarray(){

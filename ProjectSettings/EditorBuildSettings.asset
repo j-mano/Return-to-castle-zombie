@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/gameLostScene.unity
     guid: 319e8b423334d150fb186ca4759ae0c2
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: adbfe2ecd947ce15f9914c94bbb31146,
+      type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: 56d1c9a10a8e430eaa4d07cca77328f2, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: a087e64869524f0deac87606a0e493f7, type: 2}

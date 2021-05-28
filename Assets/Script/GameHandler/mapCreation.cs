@@ -9,7 +9,6 @@ public class mapCreation : MonoBehaviour
     // a few extra functions exist to make sure no crases occure and so on.
     int mapId;
     bool findanything = false;
-
     public bool testmap = false;
 
     Object[] allMaps;

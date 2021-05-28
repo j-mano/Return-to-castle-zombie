@@ -31,12 +31,12 @@ public class CastleManager : MonoBehaviour
     }
 
     // Update the ui healthh slider.
-    void Update()
+    async void Update()
     {
-        healthRepesSentationManagers();
+        await healthRepesSentationManagers();
     }
 
-    public float getCastleHealth(){
+    public async Task<float> getCastleHealthAsync(){
         return currentHouseHealth;
     }
 
@@ -60,7 +60,7 @@ public class CastleManager : MonoBehaviour
     }
 
     // show grafikly the health of the castle with objects
-    void healthRepesSentationManagers(){
+    async Task healthRepesSentationManagers(){
             villagers = GameObject.FindGameObjectsWithTag("villagers");
 
             if (currentHouseHealth >= starthealth * 0.95)

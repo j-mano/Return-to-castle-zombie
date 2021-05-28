@@ -23,7 +23,7 @@ public class Enemystorage : MonoBehaviour
     {
         enemydead();
 
-        castle = GameObject.FindGameObjectWithTag("castle");
+        castle      = GameObject.FindGameObjectWithTag("castle");
         GameHandler = GameObject.FindGameObjectWithTag("GameHandler");
     }
 
@@ -115,8 +115,8 @@ public class Enemystorage : MonoBehaviour
     }
 
     // Updatdesstats as it shoud when the object dies.
-    void ondeadthupdatestats(){
-        GameHandler.GetComponent<GameStatsManager>().addkilldZombies(killvalue);
+    async void ondeadthupdatestats(){
+        await GameHandler.GetComponent<GameStatsManager>().addkilldZombiesAsync(killvalue);
 
         GameHandler.GetComponent<Economy>().addbrains(brains);
         GameHandler.GetComponent<Economy>().addseeds(seeds);

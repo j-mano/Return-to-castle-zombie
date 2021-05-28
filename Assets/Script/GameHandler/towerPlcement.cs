@@ -152,7 +152,7 @@ public class towerPlcement : MonoBehaviour
         }
     }
 
-    void checkMapTowerRules(){
+    async void checkMapTowerRules(){
         RaycastHit2D hit;
         string targettype = "";
 
@@ -165,28 +165,27 @@ public class towerPlcement : MonoBehaviour
         if(hit.collider == null)
         {
             if(!EventSystem.current.IsPointerOverGameObject()){
-                if(targettype == "WaterTower"){
+                if(targettype == "WaterTower")
                     Debug.Log("Trying to load tower meant for water on land");
-                }
                 else
-                    towerplacementdraincost();
+                    await towerplacementdraincostAsync();
             }
         }
         else{
             if(targettype == "Hower"){
                 Debug.Log("placing hower tower");
-                towerplacementdraincost();
+                await towerplacementdraincostAsync();
             }
             else if(targettype == "WaterTower" && hit.collider.name == "Water"){
                 Debug.Log("placing watertype tower");
-                towerplacementdraincost();
+                await towerplacementdraincostAsync();
             }
             else
                 Debug.Log("Stuff in the way plese selecet other placement. object in the way: " + hit.collider);
         }
     }
 
-    void towerplacementdraincost(){
+    async Task towerplacementdraincostAsync(){
         currenttowers = GameHandler.GetComponent<towersInScen>().getamountoftowers();
 
         // check so tower is selected.
@@ -278,13 +277,13 @@ public class towerPlcement : MonoBehaviour
                 target.tag  = "Untagged";
                 target.GetComponent<getTowerInfo>().setaiaktiv(false);
                 target      = (GameObject)Instantiate(tower);
+
                 try{
                     target.GetComponent<Collider2D>().enabled = false;
                 }
                 catch{
                     // This try catch is for walkable tower. todo: rebuiold function to take this in considirtation.
                 }
-                
             }
             else if(targetname != namn)
             {
@@ -403,7 +402,7 @@ public class towerPlcement : MonoBehaviour
     }
 
     // Controlls for placing towers by using keypad. Can possibly be used by controller in the future.
-    public void controllfunction(string key)
+    public async void controllfunction(string key)
     {
         Vector2 targetpos = target.transform.position;
 
@@ -417,7 +416,7 @@ public class towerPlcement : MonoBehaviour
             else if (key == "right")
                 targetpos.x = targetpos.x + 0.1f;
             else if (key == "place")
-                towerplacementdraincost();
+                await towerplacementdraincostAsync();
 
             target.transform.position = targetpos;
         }

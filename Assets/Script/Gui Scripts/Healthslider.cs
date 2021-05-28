@@ -21,8 +21,8 @@ public class Healthslider : MonoBehaviour
         Health();
     }
 
-    private void Health(){
-        slider.value = CastleManager.GetComponent<CastleManager>().getCastleHealth();
+    private async void Health(){
+        slider.value = await CastleManager.GetComponent<CastleManager>().getCastleHealthAsync();
     }
 
     private void getmaxtowers(){

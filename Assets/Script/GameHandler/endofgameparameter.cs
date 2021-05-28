@@ -26,8 +26,8 @@ public class endofgameparameter : MonoBehaviour
         castle          = GameObject.FindGameObjectWithTag("castle");
     }
 
-    void healtcheck(){
-        helht = castle.GetComponent<CastleManager>().getCastleHealth();
+    async void healtcheck(){
+        helht = await castle.GetComponent<CastleManager>().getCastleHealthAsync();
 
         if (helht <= 0)
             gameLost();

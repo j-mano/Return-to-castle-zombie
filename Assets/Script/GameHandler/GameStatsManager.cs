@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
+using System.Threading.Tasks;
 
 public class GameStatsManager : MonoBehaviour
 {
@@ -17,7 +19,7 @@ public class GameStatsManager : MonoBehaviour
         return killdPlants;
     }
 
-    public void addkilldZombies(int killdzombie){
+    public async Task addkilldZombiesAsync(int killdzombie){
         killdPlants = killdPlants + killdzombie;
     }
 }

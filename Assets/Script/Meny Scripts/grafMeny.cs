@@ -7,9 +7,10 @@ public class grafMeny : MonoBehaviour
 {
     // Settingsscripts in grafmeny
 
-    public Dropdown resolutionDroppdown;
+    public Dropdown resolutionDroppdown,antialasingDroppdown;
 
     Resolution[] deviceResolutions;
+    string[] Quality;
 
     public Toggle VsyncToggle;
 
@@ -22,6 +23,7 @@ public class grafMeny : MonoBehaviour
 
     void filldroppdownboxes(){
         resolutionfill();
+        antialaisingfill();
     }
 
     void checkToggles(){
@@ -54,6 +56,19 @@ public class grafMeny : MonoBehaviour
         resolutionDroppdown.value = currentResOptionIndex;
     }
 
+    void antialaisingfill(){
+        List<string> names = new List<string>();
+
+        Quality = QualitySettings.names;
+
+        foreach(var QualitySetting in Quality){
+            names.Add(QualitySetting.ToString());
+        }
+
+        antialasingDroppdown.AddOptions(names);
+        antialasingDroppdown.value = QualitySettings.GetQualityLevel();
+    }
+
     public void windowmodetogle(){
         Screen.fullScreen = !Screen.fullScreen;
 
@@ -68,6 +83,10 @@ public class grafMeny : MonoBehaviour
             Screen.SetResolution(deviceResolutions[index].width, deviceResolutions[index].height, true);
         else
             Screen.SetResolution(deviceResolutions[index].width, deviceResolutions[index].height, false);
+    }
+
+    public void setAntiAlising(int index){
+        QualitySettings.SetQualityLevel(index, true);
     }
 
     public void setVsync(){

@@ -157,6 +157,7 @@ QualitySettings:
     PS4: 3
     PSM: 3
     PSP2: 1
+    Server: 0
     Stadia: 3
     Standalone: 2
     Tizen: 1
